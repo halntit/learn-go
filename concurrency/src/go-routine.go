@@ -19,10 +19,9 @@ func main() {
 	// go count("fish") // go immediately to the next line
 
 	// this will stop when hit enter
-	go count("sheep") // go immediately to the next line
-	go count("fish") // go immediately to the next line
-
-	fmt.Scanln() // wait for enter
+	// go count("sheep") // go immediately to the next line
+	// go count("fish") // go immediately to the next line
+	// fmt.Scanln() // wait for enter
 }
 
 func count(thing string) {
