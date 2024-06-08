@@ -1,0 +1,3 @@
+DROP TABLE IF EXISTS "entities"
+DROP TABLE IF EXISTS "transfers"
+DROP TABLE IF EXISTS "accounts"
