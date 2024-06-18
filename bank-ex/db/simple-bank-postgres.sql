@@ -6,7 +6,7 @@ CREATE TABLE "accounts" (
   "created_at" timestamptz NOT NULL DEFAULT (now())
 );
 
-CREATE TABLE "entities" (
+CREATE TABLE "entries" (
   "id" bigserial PRIMARY KEY,
   "account_id" bigint NOT NULL,
   "amount" bigint NOT NULL,
@@ -23,7 +23,7 @@ CREATE TABLE "transfers" (
 
 CREATE INDEX ON "accounts" ("owner");
 
-CREATE INDEX ON "entities" ("account_id");
+CREATE INDEX ON "entries" ("account_id");
 
 CREATE INDEX ON "transfers" ("from_acount_id");
 
@@ -31,11 +31,11 @@ CREATE INDEX ON "transfers" ("to_acount_id");
 
 CREATE INDEX ON "transfers" ("from_acount_id", "to_acount_id");
 
-COMMENT ON COLUMN "entities"."amount" IS 'can be negative';
+COMMENT ON COLUMN "entries"."amount" IS 'can be negative';
 
 COMMENT ON COLUMN "transfers"."amount" IS 'must be positive';
 
-ALTER TABLE "entities" ADD FOREIGN KEY ("account_id") REFERENCES "accounts" ("id");
+ALTER TABLE "entries" ADD FOREIGN KEY ("account_id") REFERENCES "accounts" ("id");
 
 ALTER TABLE "transfers" ADD FOREIGN KEY ("from_acount_id") REFERENCES "accounts" ("id");
 
