@@ -20,3 +20,7 @@
 
 ## Migrate first migration
 - ```migrate --path db/migrations --database "postgresql://root:secret@localhost:5432/simple_bank?sslmode=disable" --verbose up```
+
+## Official documentation about transaction isolation levels:
+- MySQL: https://dev.mysql.com/doc/refman/8.0/en/innodb-transaction-isolation-levels.html
+- Postgres: https://www.postgresql.org/docs/current/transaction-iso.html
